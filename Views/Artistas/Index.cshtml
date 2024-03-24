@@ -1,0 +1,22 @@
+﻿@model List<Artista>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="@HelperPathProvider.MapUrlPath(@item.Foto ,Folders.Aristas)" style="height:230px; width:100%" />
+
+                    <h4 class="card-title" style="margin-top:6px">@item.Nombre</h4>
+
+                    <form method="post" asp-controller="Artistas" asp-action="EliminarArtista" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este artista?');">
+                        <input type="hidden" name="id" value="@item.IdArtista" />
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

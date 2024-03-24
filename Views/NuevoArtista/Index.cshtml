@@ -1,0 +1,31 @@
+﻿@model ImagenesMVCNetCore.Models.Artista
+
+@{
+    ViewData["Title"] = "Subir Nuevo Artista";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">Nuevo Artista</h5>
+                    <form method="post" enctype="multipart/form-data" asp-controller="NuevoArtista" asp-action="AddNuevoArtista">
+                        <div class="mb-3">
+                            <label for="nombreArtista" class="form-label">Nombre del Artista</label>
+                            <input type="text" class="form-control" name="Nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="foto" name="Foto" accept="image/*" required>
+                        </div>
+                        <div style="text-align:center; margin-top:20px">
+                            <button type="submit" class="btn btn-primary" style="width: 240px; margin: auto;display: block;">Crear Artista</button>
+                        </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
